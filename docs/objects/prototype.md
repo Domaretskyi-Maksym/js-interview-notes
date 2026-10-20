@@ -1,4 +1,4 @@
-# [[Prototype]] і __proto__
+# [[Prototype]] і `__proto__`
 
 ::: v-pre
 ## 1\. Що таке прототипне наслідування в JavaScript?

@@ -1,7 +1,7 @@
 import re,os
 R='/workspace/js-notes-site/raw/'; D='/workspace/js-notes-site/docs/'
 M={ # id: (path, title)
-'1XEQKf6cYXMK7J2vkUVyzF5IWMIwzrIRzFAdHkh7Iemg':('objects/prototype.md','[[Prototype]] і __proto__'),
+'1XEQKf6cYXMK7J2vkUVyzF5IWMIwzrIRzFAdHkh7Iemg':('objects/prototype.md','[[Prototype]] і `__proto__`'),
 '1ECb4KNDqoIRhggYd3mNR0SC5uxVIIsXkW3_rx41PwFo':('objects/freeze-seal.md','preventExtensions, seal, freeze'),
 '1IPD0Xf_3264VjnGyazG-1ji1dIhqwlnuMO2mQ3O4QdA':('objects/getters-setters.md','Гетери і сетери в об’єктах'),
 '1umJN9MWkPIn9WUXMBy5JPLrGgoGb-GM_sY5PbzLDbZ4':('objects/proxy-reflect.md',None),
