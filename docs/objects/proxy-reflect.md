@@ -18,4 +18,32 @@
 * **Рішення:** Передати третій аргумент — **`receiver`** — у метод `Reflect.get(target, prop, receiver)`.  
 * **Що таке `receiver`:** Це посилання на початковий об'єкт, до якого реально звернулися (дочірній). `Reflect`використовує його, щоб примусово вказати правильний `this` для гетерів та сетерів.
 
+## Базовий приклад використання
+
+Пастка get повертає значення за замовчуванням, якщо властивості немає, а пастка set перевіряє дані перед записом. Усередині пасток ми викликаємо Reflect.get / Reflect.set, щоб зберегти стандартну поведінку об’єкта.
+
+```js
+const user = { name: 'Іван' };
+
+const proxy = new Proxy(user, {
+  // get: значення за замовчуванням для відсутніх властивостей
+  get(target, prop, receiver) {
+    if (!(prop in target)) return 'немає даних';
+    return Reflect.get(target, prop, receiver);
+  },
+  // set: валідація — age має бути числом
+  set(target, prop, value, receiver) {
+    if (prop === 'age' && typeof value !== 'number') {
+      throw new TypeError('age має бути числом');
+    }
+    return Reflect.set(target, prop, value, receiver);
+  }
+});
+
+console.log(proxy.name); // 'Іван'
+console.log(proxy.city); // 'немає даних'
+proxy.age = 30;          // ок
+proxy.age = 'тридцять';  // TypeError: age має бути числом
+```
+
 :::
