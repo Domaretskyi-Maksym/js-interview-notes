@@ -27,6 +27,8 @@ export default defineConfig({
         { text: 'MutationObserver', link: '/browser/mutation-observer' },
         { text: 'WebSocket, SSE, Workers', link: '/browser/websocket-sse-workers' },
         { text: 'WebSocket у Vue 3 та React', link: '/browser/websocket-vue-react' } ] },
+      { text: 'Vue', items: [
+        { text: 'createApp, mount, errorHandler', link: '/vue/create-app' } ] },
       { text: 'Чекліст', items: [{ text: 'Interview Prep Checklist', link: '/checklist' }] },
     ],
     outline: { level: [2, 3], label: 'На цій сторінці' },
